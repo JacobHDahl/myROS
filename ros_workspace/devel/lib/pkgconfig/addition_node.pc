@@ -1,8 +1,0 @@
-prefix=/home/jacob/src/ros_workspace/devel
-
-Name: addition_node
-Description: Description of addition_node
-Version: 0.0.0
-Cflags: 
-Libs: -L/home/jacob/src/ros_workspace/devel/lib 
-Requires: 

@@ -1,8 +1,8 @@
-# Install script for directory: /home/jacob/src/ros_workspace/src/printing_node
+# Install script for directory: /home/jacob/src/myROS/ros_workspace/src/printing_node
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/jacob/src/ros_workspace/install")
+  set(CMAKE_INSTALL_PREFIX "/home/jacob/src/myROS/ros_workspace/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -33,17 +33,17 @@ if(NOT DEFINED CMAKE_INSTALL_SO_NO_EXE)
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/jacob/src/ros_workspace/build/printing_node/catkin_generated/installspace/printing_node.pc")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/jacob/src/myROS/ros_workspace/build/printing_node/catkin_generated/installspace/printing_node.pc")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/printing_node/cmake" TYPE FILE FILES
-    "/home/jacob/src/ros_workspace/build/printing_node/catkin_generated/installspace/printing_nodeConfig.cmake"
-    "/home/jacob/src/ros_workspace/build/printing_node/catkin_generated/installspace/printing_nodeConfig-version.cmake"
+    "/home/jacob/src/myROS/ros_workspace/build/printing_node/catkin_generated/installspace/printing_nodeConfig.cmake"
+    "/home/jacob/src/myROS/ros_workspace/build/printing_node/catkin_generated/installspace/printing_nodeConfig-version.cmake"
     )
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/printing_node" TYPE FILE FILES "/home/jacob/src/ros_workspace/src/printing_node/package.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/printing_node" TYPE FILE FILES "/home/jacob/src/myROS/ros_workspace/src/printing_node/package.xml")
 endif()
 

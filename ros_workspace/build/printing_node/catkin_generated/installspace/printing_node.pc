@@ -1,8 +1,8 @@
-prefix=/home/jacob/src/ros_workspace/install
+prefix=/home/jacob/src/myROS/ros_workspace/install
 
 Name: printing_node
 Description: Description of printing_node
 Version: 0.0.0
 Cflags: 
-Libs: -L/home/jacob/src/ros_workspace/install/lib 
+Libs: -L/home/jacob/src/myROS/ros_workspace/install/lib 
 Requires: 

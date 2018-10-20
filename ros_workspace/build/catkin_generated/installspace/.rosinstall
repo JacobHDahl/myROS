@@ -1,2 +1,2 @@
 - setup-file:
-    local-name: /home/jacob/src/ros_workspace/install/setup.sh
+    local-name: /home/jacob/src/myROS/ros_workspace/install/setup.sh
