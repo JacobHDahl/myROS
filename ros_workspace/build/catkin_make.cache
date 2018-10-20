@@ -1,0 +1,2 @@
+addition_node:printing_node:random_node
+-DCATKIN_DEVEL_PREFIX=/home/jacob/src/ros_workspace/devel -DCMAKE_INSTALL_PREFIX=/home/jacob/src/ros_workspace/install -G Unix Makefiles

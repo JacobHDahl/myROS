@@ -1,0 +1,8 @@
+prefix=/home/jacob/src/ros_workspace/devel
+
+Name: printing_node
+Description: Description of printing_node
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/jacob/src/ros_workspace/devel/lib 
+Requires: 
