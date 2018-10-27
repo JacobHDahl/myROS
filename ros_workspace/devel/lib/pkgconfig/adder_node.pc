@@ -1,0 +1,8 @@
+prefix=/home/jacob/src/myROS/ros_workspace/devel
+
+Name: adder_node
+Description: Description of adder_node
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/jacob/src/myROS/ros_workspace/devel/lib 
+Requires: random_node roscpp std_msgs message_runtime

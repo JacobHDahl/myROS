@@ -1,0 +1,8 @@
+prefix=/home/jacob/src/myROS/ros_workspace/devel
+
+Name: random_node
+Description: Description of random_node
+Version: 0.0.0
+Cflags: -I/home/jacob/src/myROS/ros_workspace/devel/include
+Libs: -L/home/jacob/src/myROS/ros_workspace/devel/lib 
+Requires: roscpp std_msgs message_runtime
