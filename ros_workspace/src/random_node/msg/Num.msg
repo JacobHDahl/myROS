@@ -1,3 +1,3 @@
-
-int64 num2
-int64 num1
+Header header
+int16 num2
+int16 num1

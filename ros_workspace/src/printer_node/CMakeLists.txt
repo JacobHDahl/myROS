@@ -12,6 +12,7 @@ find_package(catkin REQUIRED COMPONENTS
   random_node
   roscpp
   std_msgs
+  genmsg
 )
 
 ## System dependencies are found with CMake's conventions
@@ -69,10 +70,10 @@ find_package(catkin REQUIRED COMPONENTS
 # )
 
 ## Generate added messages and services with any dependencies listed here
-# generate_messages(
-#   DEPENDENCIES
-#   std_msgs
-# )
+ generate_messages(
+   DEPENDENCIES
+   std_msgs
+ )
 
 ################################################
 ## Declare ROS dynamic reconfigure parameters ##
@@ -106,7 +107,7 @@ find_package(catkin REQUIRED COMPONENTS
 catkin_package(
 #  INCLUDE_DIRS include
 #  LIBRARIES printer_node
-#  CATKIN_DEPENDS adder_node random_node roscpp std_msgs
+  CATKIN_DEPENDS adder_node random_node roscpp std_msgs message_runtime
 #  DEPENDS system_lib
 )
 
@@ -117,7 +118,7 @@ catkin_package(
 ## Specify additional locations of header files
 ## Your package locations should be listed before other locations
 include_directories(
-# include
+ include
   ${catkin_INCLUDE_DIRS}
 )
 
@@ -198,3 +199,7 @@ include_directories(
 
 ## Add folders to be run by python nosetests
 # catkin_add_nosetests(test)
+
+add_executable(adder_listener src/printer.cpp)
+target_link_libraries(adder_listener ${catkin_LIBRARIES})
+add_dependencies(adder_listener printer_node_generate_messages_cpp)

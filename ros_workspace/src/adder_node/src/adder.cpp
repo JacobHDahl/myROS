@@ -1,7 +1,7 @@
 #include <iostream>
 #include "ros/ros.h"
+#include <random_node/Num.h>
 #include <std_msgs/Int16.h>
-
 
 /*The way to publish and subscribe in the same node is to make a class 
 with the nodehandle, publisher and subscriber as members of the class.
@@ -10,48 +10,48 @@ The subscriber needs 2 extra arguments: The adress of the callback function
 and a pointer to its object(which is a this pointer). Then, in the callback
 function you do the operations you need and publish the message(s). */
 
-
-class Adder{
-    public:
-    //Constructor initializes
-    Adder(){
-
-        ros::Subscriber random_sub_ = nh_.subscribe("random_topic",10,&Adder::randomCallback,this);
-        ros::Publisher adder_pub_ = nh_.advertise<std_msgs::Int16>("adder_topic",10);
-
+class Adder
+{
+  public:
+    /**
+     * Constructor without parameters is used for.... 
+     */
+    Adder()
+    {
+        random_sub_ = nh_.subscribe("random_topic", 1, &Adder::randomCallback, this);
+        adder_pub_ = nh_.advertise<std_msgs::Int16>("adder_topic", 1);
     }
 
-    private:
+
+
+  private:
     ros::NodeHandle nh_;
     ros::Subscriber random_sub_;
     ros::Publisher adder_pub_;
-    void randomCallback(const std_msgs::Int16::ConstPtr& msg){
-        //print the recieved message
-        ROS_INFO("I heard: [%i]", msg->data);
 
+    /**
+     * Hva den gjør
+     * 
+     * param msg Message blir henta fra subscirptio
+     * 
+     */
+    void randomCallback(const random_node::Num::ConstPtr &msg)
+    {
+        
         //increase the number with 32, because why not
-        int new_data=msg->data;
-        new_data+=32;
+        int first_number = msg->num1;
+        int second_number = msg->num2;
+       
         std_msgs::Int16 new_msg;
-        new_msg.data = new_data;
+        new_msg.data = first_number + second_number;
 
         //publish new message
         adder_pub_.publish(new_msg);
 
-        ros::spinOnce();
-
         //print the new message
         ROS_INFO("I PUBLISH: [%i]", new_msg.data);
-
-
-
     }
-
-
 };
-
-
-
 
 int main(int argc, char **argv)
 {
@@ -63,13 +63,9 @@ int main(int argc, char **argv)
 
     ROS_INFO("INITIALIZED");
 
-    
-
-    
     //This thingy
     ros::spin();
 
     //Because
     return 0;
 }
-

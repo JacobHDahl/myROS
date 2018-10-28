@@ -5,11 +5,13 @@ db4c335eda50c9866a952f1d15eb9a2d /home/jacob/src/myROS/ros_workspace/devel/lib/p
 5bb62f5702f2dd3bb5ff5f8586688d0c /home/jacob/src/myROS/ros_workspace/devel/share/common-lisp/ros/random_node/msg/Num.lisp
 7ee4f6e6beeac498388b0dd5155be68b /home/jacob/src/myROS/ros_workspace/devel/share/gennodejs/ros/random_node/msg/Num.js
 0561e9b6ea61a900c674bd736adb2cfc /home/jacob/src/myROS/ros_workspace/devel/share/roseus/ros/adder_node/manifest.l
+e24c609dd1c1d6946c6e8c5a34acb1dd /home/jacob/src/myROS/ros_workspace/devel/share/roseus/ros/printer_node/manifest.l
 1b03ca2e3b2f95aa1f5765eb1ca625ea /home/jacob/src/myROS/ros_workspace/devel/share/roseus/ros/random_node/manifest.l
 1b659af5f3a3a949a8f7859d85587434 /home/jacob/src/myROS/ros_workspace/devel/share/roseus/ros/random_node/msg/Num.l
 ce0cb316aa73b2948df06955388c7daa CMakeFiles/clean_test_results
 7a6db20453905d28d6ce8e4c47dd9a87 adder_node/CMakeFiles/adder_node_generate_messages_eus
-3878786d16dac1c523ff979b77e7f470 random_node/CMakeFiles/_random_node_generate_messages_check_deps_Num
+c2643edbd2d8b7b5bdf6753e619223ea printer_node/CMakeFiles/printer_node_generate_messages_eus
+b6a263c513170ab643f0477c4fa7c4c0 random_node/CMakeFiles/_random_node_generate_messages_check_deps_Num
 ef5c8739b3a273327b56ef2238dfc0aa random_node/CMakeFiles/random_node_generate_messages_cpp
 ef5c8739b3a273327b56ef2238dfc0aa random_node/CMakeFiles/random_node_generate_messages_eus
 ef5c8739b3a273327b56ef2238dfc0aa random_node/CMakeFiles/random_node_generate_messages_lisp

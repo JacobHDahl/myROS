@@ -152,7 +152,7 @@ foreach(library ${libraries})
   endif()
 endforeach()
 
-set(printer_node_EXPORTED_TARGETS "")
+set(printer_node_EXPORTED_TARGETS "printer_node_generate_messages_cpp;printer_node_generate_messages_eus;printer_node_generate_messages_lisp;printer_node_generate_messages_nodejs;printer_node_generate_messages_py")
 # create dummy targets for exported code generation targets to make life of users easier
 foreach(t ${printer_node_EXPORTED_TARGETS})
   if(NOT TARGET ${t})
@@ -160,7 +160,7 @@ foreach(t ${printer_node_EXPORTED_TARGETS})
   endif()
 endforeach()
 
-set(depends "")
+set(depends "adder_node;random_node;roscpp;std_msgs;message_runtime")
 foreach(depend ${depends})
   string(REPLACE " " ";" depend_list ${depend})
   # the package name of the dependency must be kept in a unique variable so that it is not overwritten in recursive calls
@@ -189,7 +189,7 @@ foreach(depend ${depends})
   list(APPEND printer_node_EXPORTED_TARGETS ${${printer_node_dep}_EXPORTED_TARGETS})
 endforeach()
 
-set(pkg_cfg_extras "")
+set(pkg_cfg_extras "printer_node-msg-extras.cmake")
 foreach(extra ${pkg_cfg_extras})
   if(NOT IS_ABSOLUTE ${extra})
     set(extra ${printer_node_DIR}/${extra})
