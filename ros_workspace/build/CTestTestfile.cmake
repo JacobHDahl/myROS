@@ -7,3 +7,4 @@
 subdirs(gtest)
 subdirs(random_node)
 subdirs(adder_node)
+subdirs(printer_node)

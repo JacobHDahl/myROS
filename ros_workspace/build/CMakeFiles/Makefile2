@@ -1776,6 +1776,24 @@ clean: adder_node/CMakeFiles/adder_node_gennodejs.dir/clean
 .PHONY : clean
 
 #=============================================================================
+# Directory level rules for directory printer_node
+
+# Convenience name for "all" pass in the directory.
+printer_node/all:
+
+.PHONY : printer_node/all
+
+# Convenience name for "clean" pass in the directory.
+printer_node/clean:
+
+.PHONY : printer_node/clean
+
+# Convenience name for "preinstall" pass in the directory.
+printer_node/preinstall:
+
+.PHONY : printer_node/preinstall
+
+#=============================================================================
 # Special targets to cleanup operation of make.
 
 # Special rule to run CMake to check the build system integrity.
