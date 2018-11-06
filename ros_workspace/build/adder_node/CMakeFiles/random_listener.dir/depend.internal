@@ -62,5 +62,6 @@ adder_node/CMakeFiles/random_listener.dir/src/adder.cpp.o
  /opt/ros/kinetic/include/rosconsole/macros_generated.h
  /opt/ros/kinetic/include/std_msgs/Header.h
  /opt/ros/kinetic/include/std_msgs/Int16.h
+ /opt/ros/kinetic/include/std_msgs/Time.h
  /opt/ros/kinetic/include/xmlrpcpp/XmlRpcDecl.h
  /opt/ros/kinetic/include/xmlrpcpp/XmlRpcValue.h

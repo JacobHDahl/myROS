@@ -20,6 +20,7 @@ class Num {
     if (initObj === null) {
       // initObj === null is a special case for deserialization where we don't initialize fields
       this.header = null;
+      this.start = null;
       this.num2 = null;
       this.num1 = null;
     }
@@ -29,6 +30,12 @@ class Num {
       }
       else {
         this.header = new std_msgs.msg.Header();
+      }
+      if (initObj.hasOwnProperty('start')) {
+        this.start = initObj.start
+      }
+      else {
+        this.start = new std_msgs.msg.Time();
       }
       if (initObj.hasOwnProperty('num2')) {
         this.num2 = initObj.num2
@@ -49,6 +56,8 @@ class Num {
     // Serializes a message object of type Num
     // Serialize message field [header]
     bufferOffset = std_msgs.msg.Header.serialize(obj.header, buffer, bufferOffset);
+    // Serialize message field [start]
+    bufferOffset = std_msgs.msg.Time.serialize(obj.start, buffer, bufferOffset);
     // Serialize message field [num2]
     bufferOffset = _serializer.int16(obj.num2, buffer, bufferOffset);
     // Serialize message field [num1]
@@ -62,6 +71,8 @@ class Num {
     let data = new Num(null);
     // Deserialize message field [header]
     data.header = std_msgs.msg.Header.deserialize(buffer, bufferOffset);
+    // Deserialize message field [start]
+    data.start = std_msgs.msg.Time.deserialize(buffer, bufferOffset);
     // Deserialize message field [num2]
     data.num2 = _deserializer.int16(buffer, bufferOffset);
     // Deserialize message field [num1]
@@ -72,7 +83,7 @@ class Num {
   static getMessageSize(object) {
     let length = 0;
     length += std_msgs.msg.Header.getMessageSize(object.header);
-    return length + 4;
+    return length + 12;
   }
 
   static datatype() {
@@ -82,13 +93,14 @@ class Num {
 
   static md5sum() {
     //Returns md5sum for a message object
-    return '2cfa080758eba9a5c60731603263dfd7';
+    return '5ab4760c592fe1830e3587fa9b42e8b1';
   }
 
   static messageDefinition() {
     // Returns full string definition for message
     return `
     Header header
+    std_msgs/Time start
     int16 num2
     int16 num1
     
@@ -110,6 +122,10 @@ class Num {
     # 1: global frame
     string frame_id
     
+    ================================================================================
+    MSG: std_msgs/Time
+    time data
+    
     `;
   }
 
@@ -124,6 +140,13 @@ class Num {
     }
     else {
       resolved.header = new std_msgs.msg.Header()
+    }
+
+    if (msg.start !== undefined) {
+      resolved.start = std_msgs.msg.Time.Resolve(msg.start)
+    }
+    else {
+      resolved.start = new std_msgs.msg.Time()
     }
 
     if (msg.num2 !== undefined) {

@@ -1,0 +1,4 @@
+<launch>
+    <node name="random" pkg="random_node" type="random_talker" output="screen" />
+	<node name="adder" pkg="adder_node" type="random_listener" output="screen" />
+</launch>

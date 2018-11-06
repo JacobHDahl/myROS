@@ -22,8 +22,6 @@ class Adder
         adder_pub_ = nh_.advertise<std_msgs::Int16>("adder_topic", 1);
     }
 
-
-
   private:
     ros::NodeHandle nh_;
     ros::Subscriber random_sub_;
@@ -37,11 +35,11 @@ class Adder
      */
     void randomCallback(const random_node::Num::ConstPtr &msg)
     {
-        
+
         //increase the number with 32, because why not
         int first_number = msg->num1;
         int second_number = msg->num2;
-       
+
         std_msgs::Int16 new_msg;
         new_msg.data = first_number + second_number;
 

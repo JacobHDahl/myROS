@@ -1,0 +1,5 @@
+<launch>
+    <node name="random" pkg="random_node" type="random_talker" output="screen" />
+	<node name="adder" pkg="adder_node" type="random_listener" output="screen" />
+    <test test-name="adder_test" pkg="adder_node" type="adder_node_test" />
+</launch>

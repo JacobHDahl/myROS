@@ -1,0 +1,4 @@
+adder_test/floating_tol: 0.00000001
+adder_test/delay: 3.0
+adder_test/refresh_rate: 0.05
+adder_test/max_latency: 0.05

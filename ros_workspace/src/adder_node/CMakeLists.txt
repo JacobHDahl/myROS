@@ -202,8 +202,9 @@ include_directories(
 #target_link_libraries(random_listener ${catkin_LIBRARIES})
 #add_dependencies(random_listener adder_node_generate_messages_cpp)
 
-add_executable(random_listener src/adder.cpp)
-target_link_libraries(random_listener ${catkin_LIBRARIES})
-add_dependencies(random_listener adder_node_generate_messages_cpp)
+add_executable(random_listener src/adder.cpp adder_node_test test/adder_test.cpp)
+target_link_libraries(random_listener adder_listener ${catkin_LIBRARIES})
+add_dependencies(random_listener adder_listener adder_node_generate_messages_cpp)
+
 
 

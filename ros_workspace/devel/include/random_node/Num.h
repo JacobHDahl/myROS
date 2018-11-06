@@ -16,6 +16,7 @@
 #include <ros/message_operations.h>
 
 #include <std_msgs/Header.h>
+#include <std_msgs/Time.h>
 
 namespace random_node
 {
@@ -26,11 +27,13 @@ struct Num_
 
   Num_()
     : header()
+    , start()
     , num2(0)
     , num1(0)  {
     }
   Num_(const ContainerAllocator& _alloc)
     : header(_alloc)
+    , start(_alloc)
     , num2(0)
     , num1(0)  {
   (void)_alloc;
@@ -40,6 +43,9 @@ struct Num_
 
    typedef  ::std_msgs::Header_<ContainerAllocator>  _header_type;
   _header_type header;
+
+   typedef  ::std_msgs::Time_<ContainerAllocator>  _start_type;
+  _start_type start;
 
    typedef int16_t _num2_type;
   _num2_type num2;
@@ -125,12 +131,12 @@ struct MD5Sum< ::random_node::Num_<ContainerAllocator> >
 {
   static const char* value()
   {
-    return "2cfa080758eba9a5c60731603263dfd7";
+    return "5ab4760c592fe1830e3587fa9b42e8b1";
   }
 
   static const char* value(const ::random_node::Num_<ContainerAllocator>&) { return value(); }
-  static const uint64_t static_value1 = 0x2cfa080758eba9a5ULL;
-  static const uint64_t static_value2 = 0xc60731603263dfd7ULL;
+  static const uint64_t static_value1 = 0x5ab4760c592fe183ULL;
+  static const uint64_t static_value2 = 0x0e3587fa9b42e8b1ULL;
 };
 
 template<class ContainerAllocator>
@@ -150,6 +156,7 @@ struct Definition< ::random_node::Num_<ContainerAllocator> >
   static const char* value()
   {
     return "Header header\n\
+std_msgs/Time start\n\
 int16 num2\n\
 int16 num1\n\
 \n\
@@ -170,6 +177,10 @@ time stamp\n\
 # 0: no frame\n\
 # 1: global frame\n\
 string frame_id\n\
+\n\
+================================================================================\n\
+MSG: std_msgs/Time\n\
+time data\n\
 ";
   }
 
@@ -189,6 +200,7 @@ namespace serialization
     template<typename Stream, typename T> inline static void allInOne(Stream& stream, T m)
     {
       stream.next(m.header);
+      stream.next(m.start);
       stream.next(m.num2);
       stream.next(m.num1);
     }
@@ -212,6 +224,9 @@ struct Printer< ::random_node::Num_<ContainerAllocator> >
     s << indent << "header: ";
     s << std::endl;
     Printer< ::std_msgs::Header_<ContainerAllocator> >::stream(s, indent + "  ", v.header);
+    s << indent << "start: ";
+    s << std::endl;
+    Printer< ::std_msgs::Time_<ContainerAllocator> >::stream(s, indent + "  ", v.start);
     s << indent << "num2: ";
     Printer<int16_t>::stream(s, indent + "  ", v.num2);
     s << indent << "num1: ";

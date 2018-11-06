@@ -5,13 +5,15 @@ python3 = True if sys.hexversion > 0x03000000 else False
 import genpy
 import struct
 
+import genpy
 import std_msgs.msg
 
 class Num(genpy.Message):
-  _md5sum = "2cfa080758eba9a5c60731603263dfd7"
+  _md5sum = "5ab4760c592fe1830e3587fa9b42e8b1"
   _type = "random_node/Num"
   _has_header = True #flag to mark the presence of a Header object
   _full_text = """Header header
+std_msgs/Time start
 int16 num2
 int16 num1
 
@@ -32,9 +34,13 @@ time stamp
 # 0: no frame
 # 1: global frame
 string frame_id
+
+================================================================================
+MSG: std_msgs/Time
+time data
 """
-  __slots__ = ['header','num2','num1']
-  _slot_types = ['std_msgs/Header','int16','int16']
+  __slots__ = ['header','start','num2','num1']
+  _slot_types = ['std_msgs/Header','std_msgs/Time','int16','int16']
 
   def __init__(self, *args, **kwds):
     """
@@ -44,7 +50,7 @@ string frame_id
     changes.  You cannot mix in-order arguments and keyword arguments.
 
     The available fields are:
-       header,num2,num1
+       header,start,num2,num1
 
     :param args: complete set of field values, in .msg order
     :param kwds: use keyword arguments corresponding to message field names
@@ -55,12 +61,15 @@ string frame_id
       #message fields cannot be None, assign default values for those that are
       if self.header is None:
         self.header = std_msgs.msg.Header()
+      if self.start is None:
+        self.start = std_msgs.msg.Time()
       if self.num2 is None:
         self.num2 = 0
       if self.num1 is None:
         self.num1 = 0
     else:
       self.header = std_msgs.msg.Header()
+      self.start = std_msgs.msg.Time()
       self.num2 = 0
       self.num1 = 0
 
@@ -85,7 +94,7 @@ string frame_id
         length = len(_x)
       buff.write(struct.pack('<I%ss'%length, length, _x))
       _x = self
-      buff.write(_get_struct_2h().pack(_x.num2, _x.num1))
+      buff.write(_get_struct_2I2h().pack(_x.start.data.secs, _x.start.data.nsecs, _x.num2, _x.num1))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
 
@@ -97,6 +106,8 @@ string frame_id
     try:
       if self.header is None:
         self.header = std_msgs.msg.Header()
+      if self.start is None:
+        self.start = std_msgs.msg.Time()
       end = 0
       _x = self
       start = end
@@ -113,8 +124,8 @@ string frame_id
         self.header.frame_id = str[start:end]
       _x = self
       start = end
-      end += 4
-      (_x.num2, _x.num1,) = _get_struct_2h().unpack(str[start:end])
+      end += 12
+      (_x.start.data.secs, _x.start.data.nsecs, _x.num2, _x.num1,) = _get_struct_2I2h().unpack(str[start:end])
       return self
     except struct.error as e:
       raise genpy.DeserializationError(e) #most likely buffer underfill
@@ -136,7 +147,7 @@ string frame_id
         length = len(_x)
       buff.write(struct.pack('<I%ss'%length, length, _x))
       _x = self
-      buff.write(_get_struct_2h().pack(_x.num2, _x.num1))
+      buff.write(_get_struct_2I2h().pack(_x.start.data.secs, _x.start.data.nsecs, _x.num2, _x.num1))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
 
@@ -149,6 +160,8 @@ string frame_id
     try:
       if self.header is None:
         self.header = std_msgs.msg.Header()
+      if self.start is None:
+        self.start = std_msgs.msg.Time()
       end = 0
       _x = self
       start = end
@@ -165,8 +178,8 @@ string frame_id
         self.header.frame_id = str[start:end]
       _x = self
       start = end
-      end += 4
-      (_x.num2, _x.num1,) = _get_struct_2h().unpack(str[start:end])
+      end += 12
+      (_x.start.data.secs, _x.start.data.nsecs, _x.num2, _x.num1,) = _get_struct_2I2h().unpack(str[start:end])
       return self
     except struct.error as e:
       raise genpy.DeserializationError(e) #most likely buffer underfill
@@ -175,15 +188,15 @@ _struct_I = genpy.struct_I
 def _get_struct_I():
     global _struct_I
     return _struct_I
+_struct_2I2h = None
+def _get_struct_2I2h():
+    global _struct_2I2h
+    if _struct_2I2h is None:
+        _struct_2I2h = struct.Struct("<2I2h")
+    return _struct_2I2h
 _struct_3I = None
 def _get_struct_3I():
     global _struct_3I
     if _struct_3I is None:
         _struct_3I = struct.Struct("<3I")
     return _struct_3I
-_struct_2h = None
-def _get_struct_2h():
-    global _struct_2h
-    if _struct_2h is None:
-        _struct_2h = struct.Struct("<2h")
-    return _struct_2h

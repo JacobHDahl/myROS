@@ -345,33 +345,6 @@ adder_node_gennodejs/fast:
 	cd /home/jacob/src/myROS/ros_workspace/build && $(MAKE) -f adder_node/CMakeFiles/adder_node_gennodejs.dir/build.make adder_node/CMakeFiles/adder_node_gennodejs.dir/build
 .PHONY : adder_node_gennodejs/fast
 
-src/adder.o: src/adder.cpp.o
-
-.PHONY : src/adder.o
-
-# target to build an object file
-src/adder.cpp.o:
-	cd /home/jacob/src/myROS/ros_workspace/build && $(MAKE) -f adder_node/CMakeFiles/random_listener.dir/build.make adder_node/CMakeFiles/random_listener.dir/src/adder.cpp.o
-.PHONY : src/adder.cpp.o
-
-src/adder.i: src/adder.cpp.i
-
-.PHONY : src/adder.i
-
-# target to preprocess a source file
-src/adder.cpp.i:
-	cd /home/jacob/src/myROS/ros_workspace/build && $(MAKE) -f adder_node/CMakeFiles/random_listener.dir/build.make adder_node/CMakeFiles/random_listener.dir/src/adder.cpp.i
-.PHONY : src/adder.cpp.i
-
-src/adder.s: src/adder.cpp.s
-
-.PHONY : src/adder.s
-
-# target to generate assembly for a file
-src/adder.cpp.s:
-	cd /home/jacob/src/myROS/ros_workspace/build && $(MAKE) -f adder_node/CMakeFiles/random_listener.dir/build.make adder_node/CMakeFiles/random_listener.dir/src/adder.cpp.s
-.PHONY : src/adder.cpp.s
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -397,9 +370,6 @@ help:
 	@echo "... adder_node_generate_messages_py"
 	@echo "... adder_node_generate_messages_nodejs"
 	@echo "... adder_node_gennodejs"
-	@echo "... src/adder.o"
-	@echo "... src/adder.i"
-	@echo "... src/adder.s"
 .PHONY : help
 
 
